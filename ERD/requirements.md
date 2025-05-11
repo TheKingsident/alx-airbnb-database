@@ -85,3 +85,5 @@
     - `booking_id` in the Booking and Payment tables. 
 
 # ERD Diagram
+
+![ERD Diagram](https://github.com/TheKingsident/alx-airbnb-database/blob/main/ERD/erd.png)
