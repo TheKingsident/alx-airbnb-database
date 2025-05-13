@@ -11,6 +11,7 @@ SELECT Property.property_id, Property.name, Review.comment
 FROM Property
 LEFT JOIN Review
 ON Property.property_id = Review.property_id
+ORDER BY Property.property_id;
 
 -- FULL OUTER JOIN QUERY
 -- Construct a FULL OUTER JOIN query to fetch all users and all bookings, including users without bookings and bookings not associated with any user.
