@@ -2,9 +2,10 @@
 -- matches the id of properties that have at least one review with a rating greater than 4.
 SELECT * FROM Property
 WHERE property_id IN (
-    SELECT property.id
+    SELECT property_id
     FROM Review
-    WHERE AVG(rating) > 4
+    GROUP BY property_id
+    HAVING AVG(rating) > 4
 );
 
 
