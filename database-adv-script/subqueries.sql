@@ -1,5 +1,5 @@
--- This query selects all properties from the Property table where the property_id
--- matches the id of properties that have at least one review with a rating greater than 4.
+-- This query selects all properties from the Property table where the property's
+-- average review rating is greater than 4.
 SELECT * FROM Property
 WHERE property_id IN (
     SELECT property_id
