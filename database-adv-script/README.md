@@ -1,6 +1,6 @@
 # Advanced SQL Queries Documentation
 
-This document provides a brief description of the advanced SQL queries included in the `joins_queries.sql` and `subqueries.sql` files. These queries demonstrate the use of different types of SQL joins and subqueries to retrieve meaningful data from the database.
+This document provides a brief description of the advanced SQL queries included in the `joins_queries.sql`, `subqueries.sql`, and `aggregations_and_window_functions.sql` files. These queries demonstrate the use of different types of SQL joins, subqueries, aggregations, and window functions to retrieve meaningful data from the database.
 
 ## Joins Queries Overview (`joins_queries.sql`)
 
@@ -30,4 +30,14 @@ This document provides a brief description of the advanced SQL queries included 
 - Retrieves the ID, first name, and last name of users who have made more than 3 bookings.
 - Uses a subquery to count bookings per user and filters accordingly.
 
-These queries are designed to showcase how different types of joins and subqueries can be used to extract and analyze data effectively.
+## Aggregations & Window Functions Overview (`aggregations_and_window_functions.sql`)
+
+### 1. **Total Bookings per User**
+- Finds the total number of bookings made by each user.
+- Uses `COUNT` and `GROUP BY` to aggregate booking counts per user.
+
+### 2. **Property Booking Rankings**
+- Retrieves each property's ID and name, counts how many bookings each property has, and ranks the properties by booking count in descending order.
+- Uses window functions (`RANK` and `ROW_NUMBER`) to assign a rank and a unique row number to each property based on their booking counts.
+
+These queries are designed to showcase how different types of joins, subqueries, aggregations, and window functions can be used to extract and analyze data effectively.
