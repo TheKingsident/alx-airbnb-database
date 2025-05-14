@@ -1,8 +1,8 @@
 # Advanced SQL Queries Documentation
 
-This document provides a brief description of the advanced SQL queries included in the `joins_queries.sql` file. These queries demonstrate the use of different types of SQL joins to retrieve meaningful data from the database.
+This document provides a brief description of the advanced SQL queries included in the `joins_queries.sql` and `subqueries.sql` files. These queries demonstrate the use of different types of SQL joins and subqueries to retrieve meaningful data from the database.
 
-## Queries Overview
+## Joins Queries Overview (`joins_queries.sql`)
 
 ### 1. **INNER JOIN Query**
 - Retrieves a list of bookings along with user details.
@@ -20,4 +20,14 @@ This document provides a brief description of the advanced SQL queries included 
   - Bookings not associated with any user.
 - Joins the `User` table and the `Booking` table on the `user_id` field.
 
-These queries are designed to showcase how different types of joins can be used to extract and analyze data effectively.
+## Subqueries Overview (`subqueries.sql`)
+
+### 1. **Properties with High Ratings**
+- Selects all properties that have at least one review with a rating greater than 4.
+- Uses a subquery to filter properties based on review ratings.
+
+### 2. **Users with Multiple Bookings**
+- Retrieves the ID, first name, and last name of users who have made more than 3 bookings.
+- Uses a subquery to count bookings per user and filters accordingly.
+
+These queries are designed to showcase how different types of joins and subqueries can be used to extract and analyze data effectively.
