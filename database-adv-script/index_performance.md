@@ -3,27 +3,26 @@ High-usage columns in the database for the `User`, `Property`, and `Booking` tab
 Before indexing, querying the database with:
 
 ```sql
-EXPLAIN SELECT * FROM Booking WHERE user_id = 5;
+EXPLAIN ANALYZE SELECT * FROM Booking WHERE user_id = 5;
 ```
 
 Sample output:
 
 ```
-                          QUERY PLAN
----------------------------------------------------------------
- Seq Scan on booking  (cost=0.00..35.50 rows=5 width=100)
+ Seq Scan on booking  (cost=0.00..35.50 rows=5 width=100) (actual time=0.023..1.234 rows=5 loops=1)
    Filter: (user_id = 5)
-(2 rows)
+   Rows Removed by Filter: 95
+ Planning Time: 0.110 ms
+ Execution Time: 1.300 ms
 ```
 
 After indexing:
 
 ```
-                          QUERY PLAN
----------------------------------------------------------------
- Index Scan using idx_booking_user_id on booking  (cost=0.15..8.30 rows=5 width=100)
+ Index Scan using idx_booking_user_id on booking  (cost=0.15..8.30 rows=5 width=100) (actual time=0.010..0.040 rows=5 loops=1)
    Index Cond: (user_id = 5)
-(2 rows)
+ Planning Time: 0.090 ms
+ Execution Time: 0.050 ms
 ```
 
 It switches from a sequential scan (`Seq Scan`) to an index scan (`Index Scan`).
