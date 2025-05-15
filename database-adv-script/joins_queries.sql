@@ -15,7 +15,7 @@ ORDER BY Property.property_id;
 
 -- FULL OUTER JOIN QUERY
 -- Construct a FULL OUTER JOIN query to fetch all users and all bookings, including users without bookings and bookings not associated with any user.
-SELECT User.id, User.first_name, User.last_name, Booking.booking_id, Booking.start_date, Booking.end_date
+SELECT User.user_id, User.first_name, User.last_name, Booking.booking_id, Booking.start_date, Booking.end_date
 FROM User
 FULL OUTER JOIN Booking
-ON User.id = Booking.user_id
+ON User.user_id = Booking.user_id
