@@ -3,7 +3,17 @@ SELECT *
 FROM Booking b
 LEFT JOIN User u ON b.user_id = u.user_id
 LEFT JOIN Property p ON b.property_id = p.property_id
-LEFT JOIN Payment py ON b.booking_id = py.booking_id;
+LEFT JOIN Payment py ON b.booking_id = py.booking_id
+WHERE 1 = 1 AND 1 = 1;
+
+
+-- To check its performance with EXPLAIN
+EXPLAIN SELECT *
+FROM Booking b
+LEFT JOIN User u ON b.user_id = u.user_id
+LEFT JOIN Property p ON b.property_id = p.property_id
+LEFT JOIN Payment py ON b.booking_id = py.booking_id
+WHERE 1 = 1 AND 1 = 1;
 
 -- Refactored query that retrieves detailed booking information, including user, property, and payment details, by joining related tables.
 SELECT 
