@@ -41,3 +41,39 @@ This document provides a brief description of the advanced SQL queries included 
 - Uses window functions (`RANK` and `ROW_NUMBER`) to assign a rank and a unique row number to each property based on their booking counts.
 
 These queries are designed to showcase how different types of joins, subqueries, aggregations, and window functions can be used to extract and analyze data effectively.
+
+---
+
+## New Files Overview
+
+### `perfomance.sql`
+- Contains queries for retrieving bookings with user, property, and payment details using various join strategies.
+- Includes sample queries for performance analysis using `EXPLAIN`.
+
+### `partitioning.sql`
+- Demonstrates how to partition the `Booking` table by `start_date` using PostgreSQL's range partitioning.
+- Includes example partitions for different years and a sample query to analyze partitioned performance.
+
+### `database_index.sql`
+- Provides SQL statements to create indexes on high-usage columns in the `Booking` and `Property` tables.
+- Includes example queries to test and observe the effect of indexing on query performance.
+
+### `performance_monitoring.md`
+- Documents how to analyze query performance using `EXPLAIN ANALYZE`.
+- Shows example outputs for unpartitioned, partitioned, and indexed tables, highlighting the impact of each optimization.
+
+### `partition_performance.md`
+- Compares query execution plans and times before and after partitioning the `Booking` table.
+- Demonstrates the performance improvements gained from partitioning.
+
+### `index_performance.md`
+- Explains the impact of indexing on query performance.
+- Provides before-and-after examples of query plans and execution times for indexed vs. non-indexed columns.
+
+### `optimization_report.md`
+- Summarizes the optimization process for a complex join query.
+- Shows example execution plans before and after optimization, including the effect of indexing and query refactoring.
+
+---
+
+These files collectively demonstrate advanced SQL techniques for query writing, optimization, indexing, and performance monitoring in a relational database.
